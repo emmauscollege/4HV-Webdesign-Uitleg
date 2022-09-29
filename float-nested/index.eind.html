@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>float</title>
+    <style>
+        /* de class container gebruiken we in combinatie met stack en float
+         * zo voorkomen we dubbele css-code in stack en float 
+         */
+
+        .container {
+            box-sizing: border-box;
+            /*set padding and border included in size*/
+            display: block;
+            /* default voor div tags */
+            margin: 0px;
+        }
+
+        .stack {
+            overflow: hidden;
+            /* default is overflow: visible, maar dan wordt hoogte 0 gekozen voor de box */
+            width: 100%;
+            /* default */
+            margin: auto;
+            /* links en rechts gelijk verdeelde lege ruimte, handig als width geen 100% is */
+            border: dotted;
+            /* laat zien hoe groot de box is */
+            border-color: gray;
+            /* laat zien hoe groot de box is */
+        }
+
+        .float3kolommen {
+            float: left;
+            /*zet blokken naast elkaar */
+            width: 33.333%;
+            /* 3 kolommen naast elkaar */
+            border: solid;
+            /* laat zien hoe groot de box is */
+            border-color: red;
+            /* laat zien hoe groot de box is */
+        }
+
+        .float200px {
+            float: left;
+            /*zet blokken naast elkaar */
+            width: 200px;
+            /* vaste breedte 200 pixels */
+            margin: auto;
+            border: solid;
+            /* laat zien hoe groot de box is */
+            border-color: green;
+            /* laat zien hoe groot de box is */
+        }
+
+        .floatBreedteMin200px {
+            float: left;
+            /*zet blokken naast elkaar */
+            width: calc(100% - 200px);
+            /* volledige breedte min 200 pixels */
+            margin: auto;
+            border: solid;
+            /* laat zien hoe groot de box is */
+            border-color: blue;
+            /* laat zien hoe groot de box is */
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Voorbeeld layout met float</h1>
+
+    <p>
+        Op deze pagina zie je een voorbeeld hoe je blokken een plaats kunt geven met de css-property float.
+    </p>
+    <p>
+        Zorg dat je het box-model van css begrijpt voordat je met dit voorbeeld aan de slag gaat.
+    </p>
+    <p>
+        De div-tag gebruik je om stukjes html te groeperen. Aan de div-tags kennen we classes toe. We gebruiken classes
+        die stapelen en classes die floaten. Stapelen betekent stukjes html onder elkaar zetten. Floaten betekent
+        stukjes html naast elkaar zetten, zolang het past.
+    </p>
+    <p>Door de div-tags te nesten kun je (bijna) alle layouts maken die je wilt. Nesten van div-tags betekent dat je
+        div-tags in div-tags stopt. Je maakt dan parents, children en siblings van de div-tags.
+    </p>
+    <p>
+        De class container bevat css elementen die in alle andere classes worden gebruikt. Een class die stapelt of
+        float wordt altijd gecombineerd met de class container. Door het gebruik van deze extra container-class
+        voorkomen we dat we dezelfde css-elementen moeten herhalen in alle andere classes voor stapelen en floaten.
+    </p>
+
+    <p>
+        Als je zelf een layout gaat maken, dan is het handig om tijdelijk een lijn (border) van een bepaalde kleur om
+        elk blok te zetten. Dan kun je goed zien of de blokken de afmeting hebben die je wilt.
+    </p>
+
+    <p>
+        Bekijk de broncode van onderstaande voorbeeld en pas deze aan naar je eigen wensen om te leren hoe het precies
+        in elkaar zit.
+    </p>
+
+    <!-- de volgende div hoort bij 2 classes: stack en container -->
+    <div class="container stack">
+        <div class="container float3kolommen">
+            <p>
+                Bovenste rij eerste kolom. De eerste box met tekst zie je hier. Vind je hem mooi?
+            </p>
+        </div>
+        <div class="container float3kolommen">
+            <p>
+                Bovenste rij tweede kolom. De tweede box met tekst zie je hier. Mooi toch?
+            </p>
+        </div>
+        <div class="container float3kolommen">
+            <p>
+                Bovenste rij derde kolom. De 3e box met tekst zie je hier. Geweldig!
+            </p>
+        </div>
+    </div>
+
+    <div class="container stack">
+        <div class="container float200px">
+            <p>
+                Tweede rij linker kolom met een vaste breedte van 200 pixels. Vind je hem mooi? En hier nog meer tekst
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+                bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla bla
+            </p>
+        </div>
+        <div class="container floatBreedteMin200px">
+            <div class="container stack">
+                <p>
+                    Tweede rij rechter kolom vult de rest van de ruimte. Dus deze rechter kolom is de volle breedte van
+                    de parent container min 200 pixels van de linker kolom. De eerste gestapelde box met tekst zie je
+                    hier. Top!
+                </p>
+            </div>
+            <div class="container stack">
+                <p>
+                    Er zitten drie gestapelde containers in de rechter kolom. Alle drie zitten in een parent div die
+                    float. De tweede gestapelde box met tekst zie je hier. Super!
+                </p>
+            </div>
+            <div class="container stack">
+                <p>
+                    De derde gestapelde box met tekst zie je hier. Geweldig!
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <p>Dit is een paragaaf onderaan, deze zit niet in een div.</p>
+
+</body>
+
+</html>
