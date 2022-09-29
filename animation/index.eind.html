@@ -13,35 +13,45 @@
             border-radius: 50%;
         }
 
+        @keyframes kleuren { /* definieer animatie */
+            from {background-color: red}
+            to   {background-color: white};
+        }
         .paars {
-            background-color:grey;
-            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
+            animation-name: kleuren; /* zet hier dezelfde naam als die je achter @keyframes gebruikt */
+            animation-duration: 2s; /* doe 2 seconde over animatie */
+            animation-iteration-count: infinite; /* heraal oneindig keer */       
+            animation-direction: alternate; /* animeer vooruit en dan achteruit */
+            }
+  
+        @keyframes springen { /* definieer animatie */
+            0%  {top: 0px; left: 0px}
+            25% {top: -100px; left: 0px}
+            50% {top: -100px; left: 100px}
+            75% {top: 0px; left: 100px}
+            100%{top: 0px; left: 0px};
         }
-        .paars:hover { /* kleur veranderen */
-            background-color: red;
-        }
-
         .rood { 
-            border: 0px solid red;
-            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
-        }
-        .rood:hover { /* afmeting veranderen */
-            box-shadow: 0px 0px 20px 20px red;
-        }
+            position:relative;
+            animation-name: springen; /* zet hier dezelfde naam als die je achter @keyframes gebruikt */
+            animation-duration: 1s; /* doe 2 seconde over animatie */
+            animation-iteration-count: infinite; /* heraal oneindig keer */       
+       }
 
-        .oranje { /* vorm veranderen */
-            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
+        @keyframes draaien { /* definieer animatie */
+            from {transform: rotate(0deg)}
+            to   {transform: rotate(360deg)};
         }
-        .oranje:hover {
-            transform: rotate(10deg);
+        .oranje { /* koppel animatie aan box */
+            animation-name: draaien; /* zet hier dezelfde naam als die je achter @keyframes gebruikt */
+            animation-duration: 2s; /* doe 2 seconde over animatie */
+            animation-iteration-count: infinite; /* heraal oneindig keer */
+            animation-timing-function: linear; /* meestal is ease mooier dan lineair, maar bij draaien niet */
         }
 
         .roze { /* ga los */
-            background-image: repeating-radial-gradient(yellow , green 5%, red 10%, yellow 15%);
-            transition: 1s; /* veranderingen langzaam doen, in 1 seconde */
         }
         .roze:hover {
-            background-image: repeating-radial-gradient(red, yellow 5%, green 10%, red 15%);
         }
 
     </style>
