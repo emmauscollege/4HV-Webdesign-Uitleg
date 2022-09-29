@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<!-- 
+    code die minder aanpassing vergt 
+    als het aantal plaatjes verandert
+    zou beter zijn 
+-->
+
+<head>
+    <title>Slideshow</title>
+    <style>
+        .slide-container { 
+            /* position is nodig om de plaatjes die erin zitten met position over elkaar te kunnen zetten */
+            position:relative;
+            top:0px;
+            left:0px;
+        }
+        .slide {
+            /* afmeting van plaatjes */
+            display:block;
+            width: 600px;
+            height: 400px;
+            margin: 50px;
+            /* zet alle plaatjes over elkaar heen */
+            position:absolute;
+            top:0px;
+            left:0px;
+            /* animatie instellingen */
+            animation-duration: 10s; /* doe 10 seconde over animatie */
+            animation-iteration-count: infinite; /* herhaal oneindig keer */       
+        }
+        .een {
+            animation-name: eerste; /* 0 tot 1/3 zichtbaar */
+        }
+        .twee {
+            animation-name: tweede; /* 1/3 tot 2/3 zichtbaar */
+        }
+        .drie {
+            animation-name: derde; /* 2/3 tot 3/3 zichtbaar */
+        }
+
+        @keyframes eerste { 
+            0.00%  {opacity: 100%;}  /* zichtbaar */
+            33.33% {opacity: 100%;}  /* zichtbaar */
+            43.33% {opacity: 0%;}    /* doorzichtig */
+            90.00% {opacity: 0%;}    /* doorzichtig */ 
+            100.00%{opacity: 100%;}  /* zichtbaar */
+        }
+        @keyframes tweede { 
+            0.00%  {opacity: 0%;}     /* doorzichtig */              
+            23.33% {opacity: 0%;}    /* doorzichtig */             
+            33.33% {opacity: 100%;}  /* zichtbaar */
+            66.66% {opacity: 100%;}  /* zichtbaar */
+            76.66% {opacity: 0%;}    /* doorzichtig */ 
+            100.00%{opacity: 0%;}    /* doorzichtig */         
+        }
+        @keyframes derde { 
+            0.00%  {opacity: 100%;}  /* zichtbaar */  
+            10.00% {opacity: 0%;}    /* doorzichtig */  
+            56.66% {opacity: 0%;}    /* doorzichtig */
+            66.66% {opacity: 100%;}  /* zichtbaar */
+            100.00%{opacity: 100%;}  /* zichtbaar */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="slide-container">
+        <img class="slide een" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/beach-in-hawaii.png" alt="photo 1">
+        <img class="slide twee" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/mountains-in-hawaii.png" alt="photo 2">
+        <img class="slide drie" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/beach-waves-at-sunset.png" alt="photo 3">
+    </div>
+</body>
+
+</html>
