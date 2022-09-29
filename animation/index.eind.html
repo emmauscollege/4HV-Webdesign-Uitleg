@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Border</title>
+    <style>
+        img {
+            display:block;
+            width: 200px;
+            height: 200px;
+            margin: 50px;
+            padding:20px;
+            border-radius: 50%;
+        }
+
+        .paars {
+            background-color:grey;
+            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
+        }
+        .paars:hover { /* kleur veranderen */
+            background-color: red;
+        }
+
+        .rood { 
+            border: 0px solid red;
+            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
+        }
+        .rood:hover { /* afmeting veranderen */
+            box-shadow: 0px 0px 20px 20px red;
+        }
+
+        .oranje { /* vorm veranderen */
+            /* transition: 1s; */ /* veranderingen langzaam doen, in 1 seconde */
+        }
+        .oranje:hover {
+            transform: rotate(10deg);
+        }
+
+        .roze { /* ga los */
+            background-image: repeating-radial-gradient(yellow , green 5%, red 10%, yellow 15%);
+            transition: 1s; /* veranderingen langzaam doen, in 1 seconde */
+        }
+        .roze:hover {
+            background-image: repeating-radial-gradient(red, yellow 5%, green 10%, red 15%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <img class="paars" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/marcimus-purple.png" alt="marcimus-purple">
+    <img class="rood" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/marcimus-red.png" alt="marcimus-red">
+    <img class="oranje" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/marcimus-orange.png" alt="marcimus-orange">
+    <img class="roze" src="https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/avatars/marcimus.png" alt="marcimus">
+</body>
+
+</html>

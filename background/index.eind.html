@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Background</title>
+    <style>
+        div {
+            position: relative; /* nodig om text straks met position goed te kunnen zetten */
+            top: 0px;
+            left: 0px;
+            width: 300px;
+            height: 300px;
+            margin: 50px;
+        }
+
+        .place {
+            background-color: red;
+            /* background-image: url("https://cdn.kastatic.org/third_party/javascript-khansrc/live-editor/build/images/landscapes/beach-in-hawaii.png"); */
+            /* background-image: linear-gradient(to bottom right, red, yellow); */
+            /* border: 20px dashed black; */ /* check dat achtergrond achter content+padding+border zit en niet achter marge */
+        }
+
+        .text {
+            font-size: 50px;
+            color: lightblue;
+            text-shadow: 0px 0px 10px black; /* beter zichtbaar op drukke achtergrond */
+            /* zet rechtsonder */
+            position: absolute; /* ten opzichte van voorouder waarvan de positie is aangepast met bijv position of float */
+            right: 0px;
+            bottom: 0px;
+            margin: 0px; /* standaard marge aan de onderkant van <p> eraf */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="place">
+        <p class="text">Hawaii</p>
+    </div>
+
+</body>
+
+</html>
