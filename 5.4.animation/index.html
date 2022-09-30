@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Border</title>
+    <title>Animationr</title>
     <style>
         img {
             display:block;
@@ -49,9 +49,11 @@
             animation-timing-function: linear; /* meestal is ease mooier dan lineair, maar bij draaien niet */
         }
 
-        .roze { /* ga los */
+        @keyframes ga-los { /* definieer animatie */
+            /* ga los */
         }
-        .roze:hover {
+        .roze { 
+            animation-name: ga-los; /* zet hier dezelfde naam als die je achter @keyframes gebruikt */
         }
 
     </style>
